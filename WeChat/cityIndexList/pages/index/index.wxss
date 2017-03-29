@@ -1,0 +1,94 @@
+
+/*头部*/
+.title {
+    color: #ccc;
+    position: relative;
+    padding: 10px 0;
+}
+.title_list {
+    display: inline-block;
+    padding: 0 15px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+}
+.title button {
+    width: 50px;
+    height: 30px;
+    font-size: 16px;
+    padding: 0;
+    line-height: 30px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom:0;
+    right: 10px;
+    background: none;
+}
+.title button::after {
+    border: none;
+}
+.title_list:nth-child(1) {
+    border-right:1px #ccc solid;
+}
+/*城市列表*/
+.city_list {
+    position: relative;
+}
+
+/*城市选择头部*/
+.list_tit {
+    display: block;
+    line-height: 40px;
+    height: 40px;
+    padding-left: 15px;
+    font-size: 16ppx;
+    background: #f5f5f5;
+    color: #666;
+}
+.list_con {
+    height: 40px;
+    /*border-top: 1px #f5f5f5 solid ;*/
+    line-height: 40px;
+    font-size: 16px;
+    padding-left: 15px;
+}
+.list_con::before {
+    content: " ";
+    height: 1px;
+    border-top: 1px #f5f5f5 solid;
+    position: absolute;
+    width: 100%;
+}
+.list_con::before:nth-child(1) {
+    border: none;
+}
+/*城市选择 右边*/
+.scroll_list {
+    background: rgba(0,0,0,0);
+    position: absolute;
+    height: calc(100% - 100px);
+    width: 25px;
+    top: 90px;
+    right: 10px;
+}
+.scroll_list_chi {
+    /*border: 1px blue solid;*/
+    text-align: center;
+    font-size: 12px;
+}
+/*显示框*/
+
+.showwords {
+    width: 80px;
+    height: 80px;
+    background: rgba(0,0,0,.3);
+    border-radius:50%;
+    line-height: 80px;
+    text-align: center;
+    font-size:10vw;
+    margin: auto;
+    position: absolute;
+    top: 0;left: 0;bottom: 0;right: 0;
+    z-index: 999;   
+}
