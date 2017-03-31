@@ -13,10 +13,7 @@
 
     </block>
 </scroll-view>
-<!--城市选择列表
-
-
--->
+<!--城市选择列表-->
 <view class="scroll_list" 
       bindtouchstart="chStart"
       bindtouchend="chEnd"
@@ -25,10 +22,11 @@
       >
    <block wx:for="{{city}}" wx:for-index="idx" wx:for-item="cityName">
       <block wx:if="{{idx != '热门城市'}}">
-       <view id="{{idx}}" class="scroll_list_chi" style="line-height:{{lineHeight}}px ;font-size:{{lineHeight/1.7}}px;" bindtouchstart="getWords" bindtouchend="setWords">{{idx}}</view>
+       <view id="{{idx}}" class="scroll_list_chi" style="line-height:{{lineHeight}}px ; height:{{lineHeight}}px ;font-size:{{lineHeight/1.7}}px;" bindtouchstart="getWords" bindtouchend="setWords">{{idx}}</view>
       </block>
     </block>
 </view>
+
 <!--选择显示-->
 <view hidden="{{hidden}}" class="showwords">
   {{showwords}}

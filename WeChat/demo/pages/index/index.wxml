@@ -1,0 +1,39 @@
+九宫格布局
+<view class="wx-grid-9">
+  <view class="flex-ele">
+    <image style="width:50%;height:50%;padding-bottom:10px;" src="../../images/QRCode.png"></image>
+    <view>二维码</view>
+  </view>
+  <view class="flex-ele">
+    <image style="width:50%;height:50%;padding-bottom:10px;" src="../../images/all.png"></image>
+    <view>功能</view>
+  </view>
+  <view class="flex-ele">
+    <image style="width:50%;height:50%;padding-bottom:10px;" src="../../images/atm.png"></image>
+    <view>聊天</view>
+  </view>
+  <view class="flex-ele">
+    <image style="width:50%;height:50%;padding-bottom:10px;" src="../../images/clock.png"></image>
+    <view>时间</view>
+  </view>
+  <view class="flex-ele">
+    <image style="width:50%;height:50%;padding-bottom:10px;" src="../../images/folder.png"></image>
+    <view>文件夹</view>
+  </view>
+  <view class="flex-ele">
+    <image style="width:50%;height:50%;padding-bottom:10px;" src="../../images/save.png"></image>
+    <view>保存</view>
+  </view>
+  <view class="flex-ele">
+    <image style="width:50%;height:50%;padding-bottom:10px;" src="../../images/map.png"></image>
+    <view>地址</view>
+  </view>
+  <view class="flex-ele">
+    <image style="width:50%;height:50%;padding-bottom:10px;" src="../../images/office.png"></image>
+    <view>读书</view>
+  </view>
+  <view class="flex-ele">
+    <image style="width:50%;height:50%;padding-bottom:10px;" src="../../images/raw.png"></image>
+    <view>化学</view>
+  </view>
+</view>

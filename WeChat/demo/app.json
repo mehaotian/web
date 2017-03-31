@@ -1,0 +1,24 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/function/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color":"#666",
+    "selectedColor":"#ff5a5f",
+    "list": [{
+     
+      "pagePath": "pages/index/index",
+      "text": "UI"
+    }, {
+      "pagePath": "pages/function/index",
+      "text": "功能" 
+    }]
+  }
+}

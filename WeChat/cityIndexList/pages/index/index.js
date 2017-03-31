@@ -8,7 +8,12 @@ Page({
     },
     onLoad: function (options) {
         // 生命周期函数--监听页面加载
-        var cityChild = city.City[0];
+       
+
+    },
+    onReady: function () {
+        // 生命周期函数--监听页面初次渲染完成
+         var cityChild = city.City[0];
         var that = this;
         wx.getSystemInfo({
             success: function (res) {
@@ -22,11 +27,6 @@ Page({
 
             }
         })
-
-    },
-    onReady: function () {
-        // 生命周期函数--监听页面初次渲染完成
-
     },
     onShow: function () {
         // 生命周期函数--监听页面显示

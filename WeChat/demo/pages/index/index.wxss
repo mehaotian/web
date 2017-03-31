@@ -1,0 +1,32 @@
+.wx-grid-9 {
+  display: flex ;
+  width: 90%;
+  margin-left:5%; 
+  margin-top: 5%;
+  flex-wrap:wrap;
+  border-top: 1px #ccc solid;
+  border-left: 1px #ccc solid;
+}
+
+.wx-grid-9 > .flex-ele {
+  width:  calc(33.3% - 1px);
+  height: 100px;
+  border-right: 1px #ccc solid;
+  border-bottom: 1px #ccc solid;
+  flex:0 0 auto;
+  overflow: hidden;
+  background: #f5f5f5;
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+/*删除边框*/
+.wx-grid-9.wx-bor-no{
+  border: none ;
+}
+.wx-grid-9.wx-bor-no > .flex-ele {
+  width: 33.3%;
+  border: none;
+}
