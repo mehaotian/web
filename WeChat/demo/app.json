@@ -12,13 +12,18 @@
   "tabBar": {
     "color":"#666",
     "selectedColor":"#ff5a5f",
+    "borderStyle":"white",
     "list": [{
      
       "pagePath": "pages/index/index",
-      "text": "UI"
+      "text": "UI",
+      "iconPath":"../../images/icon/style.png",
+      "selectedIconPath":"../../images/icon/styleactive.png"
     }, {
       "pagePath": "pages/function/index",
-      "text": "功能" 
+      "text": "功能" ,
+       "iconPath":"../../images/icon/fun.png",
+      "selectedIconPath":"../../images/icon/funactive.png"
     }]
   }
 }
