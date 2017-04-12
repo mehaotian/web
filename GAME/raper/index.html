@@ -55,7 +55,7 @@
 				position: relative;
 				background: #25211f;
 				flex-grow:1;
-				
+				color:#fff;
 			}
 			.footer {
 				width: 100%;
@@ -87,10 +87,16 @@
 				position: absolute;
 				bottom: 20px;
 				left: 15%;
+				text-align: center;
+				padding-top: 100px;
 				background: #888b77 ;
 				box-shadow: 0px 2px 10px 2px rgba(0,0,0,1);
 				-webkit-transform:translateX(0%);  
 				-webkit-transition:-webkit-transform 0s 0s;
+			}
+			.side {
+				opacity: 0;
+				
 			}
 		</style>
 	</head>
@@ -103,22 +109,24 @@
 				</div>
 				<div class="tit_word">
 					<p>小透明</p>
-					<p>年龄：26</p>
+					<p>年龄：<span id="age">18</span></p>
 				</div>
 			</div>
 			<div class="main">
-				
-				<div class="box"></div>
-				
+				<div class="box">
+					
+					您现在有一个机会，是接受还是拒绝
+					
+				</div>
 			</div>
 			<div class="footer">
 				<div class="fot_warp">
-					<p>威望 <span>25</span></p>
-					<p>金钱 <span>250</span></p>
+					<p>威望 <span id="prti">0</span></p>
+					<p>金钱 <span id="money">0</span></p>
 				</div>
 				<div class="fot_warp">
-					<p>发行唱片 <span>1200</span></p>
-					<p>粉丝数 <span>11200</span></p>
+					<p>发行唱片 <span id="issue">0</span></p>
+					<p>粉丝数 <span id="fans">0</span></p>
 				</div>
 			</div>
 		</div>
@@ -127,8 +135,47 @@
 	<script src="js/jquery-2.1.0.js"></script>
 	<script src="js/game.js"></script>
 	<script type="text/javascript">
+		   /*var x = 12;     
+    var y = 0;     
+    var rand = parseInt(Math.random() * (x - y + 1) + y);     */
+		var age = 18 ,
+			prti = 0 ,
+			money = 0 ,
+			issue = 0 ,
+			fans = 0 ;
+			var rand = 0;
+		game.init(function(e){
+
+			
+			if(e.isLeft){
+				console.log("我左画")
+				$("#age").text(++age);
+				$("#prti").text(parseInt($("#prti").text())+parseInt(Math.random() * 100));
+				$("#money").text(parseInt($("#money").text())+parseInt(Math.random() * 100));
+				$("#issue").text(parseInt($("#issue").text())+parseInt(Math.random() * 100));
+				$("#fans").text(parseInt($("#fans").text())+parseInt(Math.random() * 100));
+				$(e.cont).html("我拒绝了他的要求，现在有个新选择摆在面前");
+				$(e.cont).animate({opacity:1},500);
+				
+			}
+			if(e.isRight){
+				console.log("我右画")
+				$("#age").text(++age)
+				$("#prti").text(parseInt($("#prti").text())+parseInt(Math.random() * 100));
+				$("#money").text(parseInt($("#money").text())+parseInt(Math.random() * 100));
+				$("#issue").text(parseInt($("#issue").text())+parseInt(Math.random() * 100));
+				$("#fans").text(parseInt($("#fans").text())+parseInt(Math.random() * 100));
+				$(e.cont).html("我接受了他的要求，现在又有个新选择摆在面前");
+				$(e.cont).animate({opacity:1},500);
+				
+				
+			}
+			
+		})
 		
-		game.init()
+		
+		
+		
 		
 //		$(function(){
 //			
