@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+	<style type="text/css">
+		*{padding: 0; margin: 0; font-family: "微软雅黑";}
+		.warp {
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			border: 1px red solid;
+		}
+		.box {
+			width: 90%;
+			height: 80%;
+			background: gray;
+			position: absolute;
+			top: 10%;
+			left: 5%;
+			border-radius: 20px;
+			border: 1px red solid;
+			-webkit-transform:translateX(0%);  
+			-webkit-transition:-webkit-transform 0s 0s;
+		}
+	</style>
+    </style>
+</head>
+<body>
+	<div class="warp">
+		
+		<div class="box">
+		</div>
+		
+	</div>
+    <!-- Swiper JS -->
+    <script src="js/jquery-2.1.0.js"></script>
+
+    <script>
+    	$(function(){
+    		var TOP = $(".box").offset().top;
+    		var LEFT = $(".box").offset().left;
+    			var boxTop = "";
+    			var boxLeft = "";
+    			var  TOPFIRST ;
+    			var isBack = false;
+				
+    		console.log(TOP)
+    		
+    		$(".warp").on("touchstart",".box",function(e){
+    			console.log(1)
+    			
+    			if(!isBack){
+    				$(".warp").prepend('<div class="box"></div>');
+    			}
+    			isBack = true ;
+    			 boxTop = event.targetTouches[0].pageY - this.offsetTop ;
+    			 boxLeft = event.targetTouches[0].pageX ;
+    			
+    			 TOPFIRST = event.targetTouches[0].pageY , LEFTFIRST = event.targetTouches[0].pageX;
+    			
+				$(this).bind("touchmove",boxmove);
+    		})
+    		$(".warp").on("touchend",".box",function(e){
+    			if(isBack){
+    				$(this).animate({
+	    				top:TOP,
+	    				left:LEFT
+	    			},100)
+    			}
+    			
+    		})
+    		
+    		
+    		
+    		
+    		function boxmove (e){ 
+    			
+					 e.preventDefault();// 阻止浏览器默认事件，重要 
+			        var touch = event.targetTouches[0];
+			        var pagex = touch.pageX ;
+			        var pagey = touch.pageY ;
+//					$(this).css({
+//						top:pagey - boxTop +"px" ,
+//						left:pagex - boxLeft + "px"
+//					})
+					
+					$(this).css({
+	    				transform : 'translateX('+(pagex - boxLeft)+'px)'
+	    			})
+					var isLeft = (LEFTFIRST-pagex) > 120 ;
+					var isRight = (LEFTFIRST-pagex) < -120 ;
+					if(isLeft){
+						isBack = false ;
+						console.log("我向左删除了”")
+						$(this).unbind("touchmove",boxmove)
+						$(this).animate({
+//		    				top: -500,
+		    				left:-500
+		    			},500,function(){
+		    				
+		    				$(this).remove();
+		    			})
+					}
+					if(isRight){
+						isBack = false ;
+						console.log("我向右删除了”")
+						$(this).unbind("touchmove",boxmove)
+						$(this).animate({
+//		    				top: -500,
+		    				left:1500
+		    			},500,function(){
+		    				
+		    				$(this).remove();
+		    			})
+					}
+			　　　　
+			      
+    		}
+    		
+    		
+    		
+    	})
+    	
+    </script>
+</body>
+</html>

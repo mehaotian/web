@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>首页</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<style>
+			
+			.warp {
+				width: 100%;
+				position: fixed;
+				top: 0;
+				bottom: 0;
+				display: flex;
+				flex-flow:column nowrap;
+				justify-content:space-between;
+				
+			}
+			.title {
+				width: 100%;
+				height: 8%;
+				min-height: 60px;
+				background: #000;
+				overflow:hidden;
+				display: flex;
+				flex-wrap:nowrap;
+			}
+			.title .header {
+				width: 50px;
+				height: 50px;
+				margin-top: 5px;
+				margin-left: 10px;
+			}
+			.header img {
+				width: 100%;
+			}
+			.tit_word {
+				padding: 5px 10px;
+				display: flex;
+				flex-flow:column nowrap;
+				 justify-content:center;
+				
+			}
+			.tit_word p {
+				line-height: 24px;
+				color: #838573;
+			}
+			.main {
+				width: 100%;
+				height: 90px;
+				position: relative;
+				background: #25211f;
+				flex-grow:1;
+				
+			}
+			.footer {
+				width: 100%;
+				height: 70px;
+				
+				background: #000;
+				display: flex;
+				flex-wrap:nowrap;
+				justify-content:space-around;
+				padding:0 15%;
+
+			}
+			.fot_warp {
+				width: 100%;
+				height: 70px;
+				display: flex;
+				flex-direction:column;
+				/*align-items:center;*/
+				justify-content:center;
+			}
+			.fot_warp p {
+				color: #fff;
+				line-height: 25px;
+			}
+			.box {
+				width: 70%;
+				height: 70%;
+				border-radius: 5px;
+				position: absolute;
+				bottom: 20px;
+				left: 15%;
+				background: #888b77 ;
+				box-shadow: 0px 2px 10px 2px rgba(0,0,0,1);
+				-webkit-transform:translateX(0%);  
+				-webkit-transition:-webkit-transform 0s 0s;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="warp">
+			<div class="title">
+				<div class="header">
+					<img src="img/title.jpg" alt="" />
+				</div>
+				<div class="tit_word">
+					<p>小透明</p>
+					<p>年龄：26</p>
+				</div>
+			</div>
+			<div class="main">
+				
+				<div class="box"></div>
+				
+			</div>
+			<div class="footer">
+				<div class="fot_warp">
+					<p>威望 <span>25</span></p>
+					<p>金钱 <span>250</span></p>
+				</div>
+				<div class="fot_warp">
+					<p>发行唱片 <span>1200</span></p>
+					<p>粉丝数 <span>11200</span></p>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+	<script src="js/jquery-2.1.0.js"></script>
+	<script src="js/game.js"></script>
+	<script type="text/javascript">
+		
+		game.init()
+		
+//		$(function(){
+//			
+//			var TOP = $(".box").offset().top;
+//  		var LEFT = $(".box").offset().left;
+//			var boxTop = "";
+//			var boxLeft = "";
+//			var  TOPFIRST ;
+//			var isBack = false;
+//			var isCheck = false ,a=1;
+//			var WITTIME = 1 ; // 下一个滑动，等待事件
+//			var RONUM = 9 ;//  旋转系数
+//  		console.log(TOP)
+//  		
+//  		$(".main").on("touchstart",".box",function(e){
+//  			$(this).css({
+//					transform : 'translateX(0)',
+//					transition: 'transform 0s 0s'
+//  			})
+//  			if(isCheck){
+//  				return ;
+//  			}
+//  			isCheck = true ;
+//  			console.log(1)
+//  			if(!isBack){
+//  				$(".main").prepend('<div class="box"></div>');
+//  			}
+//  			isBack = true ;
+//  			 boxTop = event.targetTouches[0].pageY - this.offsetTop ;
+//  			 boxLeft = event.targetTouches[0].pageX ;
+//  			
+//  			 TOPFIRST = event.targetTouches[0].pageY , LEFTFIRST = event.targetTouches[0].pageX;
+//  			
+//				$(this).bind("touchmove",boxmove);
+//  		})
+//  		
+//  		
+//  		
+//  		$(".main").on("touchend",".box",function(e){
+//  			if(isBack){
+//  				$(this).css({
+//						transform : 'translateX(0)',
+//						transition: 'transform .5s 0s'
+//	    			})
+//  				isCheck = false ;
+//  			}
+//  			
+//  		})
+//  		
+//  		
+//  		
+//  		
+//  		function boxmove (e){ 
+//  			
+//					 e.preventDefault();// 阻止浏览器默认事件，重要 
+//			        var touch = event.targetTouches[0];
+//			        var pagex = touch.pageX ;
+//			        var pagey = touch.pageY ;
+//					$(this).css({
+//						transform : 'translateX('+(pagex - boxLeft)+'px) rotate('+ ((pagex - boxLeft)/RONUM)+'deg)'
+//					})
+//					console.log()
+//					var isLeft = (LEFTFIRST-pagex) > 120 ;
+//					var isRight = (LEFTFIRST-pagex) < -120 ;
+//					if(isLeft){
+//						isBack = false ;
+//						console.log("我向左删除了”")
+//						$(this).unbind("touchmove",boxmove)
+//						$(this).css({
+//		    				transform : 'translateX(-200%)',
+//							transition: 'transform 1s 0s',
+//							
+//		    			})
+//		    			setTimeout(function(){
+//		    				$(".box").each(function(index){
+//		    					if(index != 0){
+//		    						$(this).remove();
+//		    					}
+//		    				})
+//		    				
+//		  					isCheck = false ;
+//		    				
+//		    			},WITTIME*1000)
+//		    				
+//					}
+//					if(isRight){
+//						isBack = false ;
+//						console.log("我向右删除了”")
+//						$(this).unbind("touchmove",boxmove)
+//						$(this).css({
+//		    				transform : 'translateX(200%)',
+//							transition: 'transform 1s 0s'
+//		    			})
+//		    			setTimeout(function(){
+//		    				$(".box").each(function(index){
+//		    					if(index != 0){
+//		    						$(this).remove();
+//		    					}
+//		    				})
+//  						isCheck = false ;
+//		    			},WITTIME*1000)
+//	    				
+//		    				
+//		    			
+//					}
+//			　　　　
+//			      
+//  		}
+//			
+//			
+//		})
+		
+		
+	</script>
+</html>
