@@ -3,6 +3,9 @@
 
 #### 目录结构
 1. WeChat  微信小程序相关
-#### 最新更新
-* WeChat --- cityIndexList   微信小程序城市索引列表
-* GAME  --- 游戏目录 新增 rapper 小游戏
+    * cityIndexList 小程序索引demo
+    * demo 九宫格选择列表 (未完成)
+2. GAME    游戏目录 
+    * raper 小游戏(待完成)
+3. WEB   web相关代码demo
+    * calculator --- 计算器demo
