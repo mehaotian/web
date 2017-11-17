@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>css阴影生成器</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/farbtastic.css" />
+	</head>
+
+	<body>
+
+		<div class="warpper">
+			<div class="col col-left">
+				<ul>
+					<li>
+						<p>生成您的盒子</p>
+						<div class="box">
+							<span>X:</span>
+							<input id="box_x" type="text" placeholder="盒子的宽度" />
+						</div>
+						<div class="box">
+							<span>Y:</span>
+							<input id="box_y" type="text" placeholder="盒子的高度" />
+						</div>
+						<div class="box">
+							<span>圆角:</span>
+							<input id="box_radius" type="text" placeholder="圆角" />
+						</div>
+						<div class="box">
+							<span>画布颜色:</span>
+  								<input type="text" id="bg_color" name="color" value="#fff" />
+  							<div id="picker"></div> 
+
+						</div>
+						<button id="createBox">生成</button>
+					</li>
+				</ul>
+
+			</div>
+			<div class="col col-right">
+				<div id="content" class="content">
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery-2.1.0.js"></script>
+		<script src="js/farbtastic.js"></script>
+		<script src="js/index.js"></script>
+		<script>
+		</script>
+	</body>
+
+</html>
