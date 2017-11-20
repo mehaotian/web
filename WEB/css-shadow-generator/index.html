@@ -7,32 +7,126 @@
 		<link rel="stylesheet" type="text/css" href="css/reset.css" />
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link rel="stylesheet" type="text/css" href="css/farbtastic.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.range.css" />
 	</head>
 
 	<body>
 
 		<div class="warpper">
 			<div class="col col-left">
-				<ul>
-					<li>
-						<p>生成您的盒子</p>
-						<div class="box">
-							<span>X:</span>
-							<input id="box_x" type="text" placeholder="盒子的宽度" />
-						</div>
-						<div class="box">
-							<span>Y:</span>
-							<input id="box_y" type="text" placeholder="盒子的高度" />
-						</div>
-						<div class="box">
-							<span>圆角:</span>
-							<input id="box_radius" type="text" placeholder="圆角" />
-						</div>
-						<div class="box">
-							<span>画布颜色:</span>
-  								<input type="text" id="bg_color" name="color" value="#fff" />
-  							<div id="picker"></div> 
+				<div class="tab">
+					<div class="tab_sub active">
+						盒子
+					</div>
+					<div class="tab_sub ">
+						阴影
+					</div>
+					<div class="tab_sub">
+						其他
+					</div>
+				</div>
 
+				<ul class="col-left-content">
+					<li>
+						<h1 class="title">生成您的盒子</h1>
+						<div class="box">
+							<span class="box-desc">宽度:</span>
+							<div class="box-inside">
+								<input id="box_width" type="text" placeholder="盒子的宽度" value="120" />
+							</div>
+						</div>
+						<div class="box">
+							<span class="box-desc">微调:</span>
+							<div class="box-inside">
+								<div class="slider slider-width"></div>
+							</div>
+						</div>
+
+						<div class="box">
+							<span class="box-desc">高度:</span>
+							<div class="box-inside">
+								<input id="box_height" type="text" placeholder="盒子的高度" value="120" />
+							</div>
+						</div>
+						<div class="box">
+							<span class="box-desc">微调:</span>
+							<div class="box-inside">
+								<div class="slider slider-height"></div>
+							</div>
+						</div>
+
+						<div class="box">
+							<span class="box-desc">边线选择:</span>
+							<div class="box-inside">
+								<input id="box_border_check" type="checkbox" checked="" />是否开启边框
+							</div>
+
+						</div>
+
+						<div class="box">
+							<span class="box-desc">边线粗细:</span>
+							<div class="box-inside">
+								<input id="box_border-width" type="text" placeholder="" value="1" />
+							</div>
+						</div>
+						<div class="box">
+							<span class="box-desc">微调:</span>
+							<div class="box-inside">
+								<div class="slider slider-border-width"></div>
+							</div>
+						</div>
+						<div class="box">
+							<span class="box-desc">边线颜色:</span>
+							<div class="box-inside color-picker">
+								<input id="border_color" type="text" placeholder="" value="#ff5a5f" />
+								<i class="color-item color-js">
+									<div id="border_picker" class="picker"></div>
+								</i>
+								
+							</div>
+
+						</div>
+
+						<div class="box">
+							<span class="box-desc">边线样式：</span>
+							<div class="box-inside">
+
+								<select id="box_border_style" name="">
+									<option value="solid">实线</option>
+									<option value="dashed">虚线</option>
+									<option value="dotted">点状边框</option>
+									<option value="double">双线</option>
+									<option value="groove">3D 凹槽边框</option>
+									<option value="ridge">3D 垄状边框</option>
+									<option value="inset">3D inset 边框</option>
+									<option value="outset">3D outset 边框</option>
+								</select>
+							</div>
+						</div>
+						<div class="box">
+							<span class="box-desc">圆角:</span>
+							<div class="box-inside">
+								<input id="box_radius" type="text" placeholder="圆角" value="0" />
+							</div>
+
+						</div>
+
+						<div class="box">
+							<span class="box-desc">微调:</span>
+							<div class="box-inside">
+								<div class="slider slider-radius"></div>
+							</div>
+						</div>
+						<div class="box">
+							<span class="box-desc">画布颜色:</span>
+							<div class="box-inside color-picker">
+
+								<input type="text" id="bg_color" name="color" value="#fff" />
+								<i class="color-item color-js">
+									<div id="bg_picker" class="picker"></div>
+								</i>
+
+							</div>
 						</div>
 						<button id="createBox">生成</button>
 					</li>
@@ -40,12 +134,13 @@
 
 			</div>
 			<div class="col col-right">
-				<div id="content" class="content">
+				<div id="content" class="content" data-type="0">
 				</div>
 			</div>
 		</div>
 		<script src="js/jquery-2.1.0.js"></script>
 		<script src="js/farbtastic.js"></script>
+		<script src="js/jquery.range.js"></script>
 		<script src="js/index.js"></script>
 		<script>
 		</script>

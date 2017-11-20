@@ -1,4 +1,7 @@
 .warpper {
+	background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 8px 9px;
+	background-color: #282828;
+	background-size: 16px 16px;
 	margin: auto;
 	position: absolute;
 	top: 0;
@@ -8,19 +11,39 @@
 	display: flex;
 }
 
-.col {
-	
-}
+.col {}
 
 .col-left {
 	width: 400px;
+	background: #71afda;
+	box-shadow: 3px 0 10px black;
+}
+.col-left-content {
+	background: #F5F5F5;
+	height: calc(100% - 75px);
+	box-sizing: border-box;
+	padding: 15px;
+	overflow: auto;
 }
 
+.col-left .box {
+	width:100% ;
+	min-height: 50px;
+	display: flex;
+	align-items: center;
+}
+.col-left .box .box-desc {
+	/*width: 70px;*/
+	flex-shrink: 0;
+}
+.col-left .box .box-inside{
+	width: 100%;
+	padding-left: 10px;
+	position: relative;
+	box-sizing: border-box;
+}
 .col-right {
 	position: relative;
-	background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 8px 9px;
-	background-color: #282828;
-	background-size: 16px 16px;
 	width: calc(100% - 400px);
 	display: flex;
 	padding: 50px;
@@ -30,10 +53,62 @@
 	width: 100%;
 	border: 1px #fff solid;
 	background-color: #eee;
-	background-image: linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc), 
-	linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc);
-	background-size:40px 40px;
-	background-position:0 0, 20px 20px;
+	background-image: linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc), linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc);
+	background-size: 40px 40px;
+	background-position: 0 0, 20px 20px;
+}
+
+.box .slider {
+	width: 80%;
+	margin: 30px;
+}
+.picker {
+	display: none;
+	position: absolute;
+	right: 0;
+	bottom: 35px;
+	background: #fff;
+	z-index: 999;
+	padding: 20px;
+	border: 1px #ddd solid;
+	box-shadow: 0px 1px 5px rgba(0,0,0,0.4);
+}
+.showDis {
+	display: block;
+}
+
+/*选项卡*/
+
+.tab {
+	width: 100%;
+	height: 50px;
+	margin-top: 25px;
+	display: flex;
+}
+
+.tab_sub {
+	width: 100%;
+	height: 50px;
+	border: 1px #71afda solid;
+	border-bottom: none;
+	position: relative;
+	background: rgba(0,0,0,0.5);
+	line-height: 50px;
+	text-align: center;
+	color: #ccc;
+}
+
+.active {
+	background: #F5F5F5;
+	border: none;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	color: #282828;
+	margin: 0;
+	height: 55px;
+	width: 105%;
+	top: -5px;
+	z-index: 10;
 }
 
 .content {
@@ -42,3 +117,51 @@
 	justify-content: center;
 }
 
+.content div {
+	/*transition: all 0.5s ease;*/
+}
+
+
+
+/*公共样式*/
+input[type='text'] {
+	width: 100%;
+	height: 35px;
+	border:#E5E5E5 1px solid;
+	border-radius: 5px;
+	padding-left: 5px;
+	font-size: 18px;
+	color: #3f576b;
+	box-sizing: border-box;
+}
+
+i.color-item {
+	display: block;
+	width: 29px;
+	height: 29px;
+	background-image: url(../images/color.png);
+	background-repeat: no-repeat;
+	background-position:right bottom;
+	background-size: 29px;
+	position: absolute;
+	bottom: 3px;
+	right: 5px;
+	z-index: 2;
+}
+.color-picker:after {
+	content: '';
+	position: absolute;
+	width: 29px;
+	height: 29px;
+	right: 5px;
+	bottom: 3px;
+	background: #fff;
+	z-index: 1;
+}
+i.color-item:hover {
+	width: 100px;
+	height: 50px;
+}
+i.color-item:hover .picker{
+	display: block;
+}
